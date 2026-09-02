@@ -1,0 +1,4 @@
+.research/
+nvim.log
+*.log
+nvim_setup_minimal.sh

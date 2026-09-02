@@ -1,0 +1,18 @@
+# Global / project config for bergercookie/asm-lsp.
+# Copy to ~/.config/asm-lsp/.asm-lsp.toml (or drop as .asm-lsp.toml in a repo root).
+#
+# Section names matter: it must be [default_config], not [default].
+# A bad schema is silently ignored and diagnostics fall back to bare gcc,
+# which marks every NASM line as a "syntax error".
+
+[default_config]
+version = "0.10"
+assembler = "nasm"
+instruction_set = "x86/x86-64"
+
+[default_config.opts]
+compiler = "nasm"
+# Needed so nasm targets 64-bit ELF instead of the 16-bit default.
+compile_flags_txt = ["-f", "elf64", "-g", "-F", "dwarf"]
+diagnostics = true
+default_diagnostics = true
